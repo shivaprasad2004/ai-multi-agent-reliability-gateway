@@ -1,4 +1,4 @@
-# ⭐ AI Multi-Agent Reliability Gateway
+#  AI Multi-Agent Reliability Gateway
 
 [![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Node.js](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
@@ -8,7 +8,7 @@
 
 A **production-grade AI Gateway** that provides a unified interface for LLM interactions with multi-agent pipelines, reliability features, caching, and comprehensive monitoring. Built for enterprise-scale AI applications.
 
-## 🚀 Features
+##  Features
 
 - **Multi-Agent Pipeline**: Generator → Safety → Quality agent workflow
 - **Reliability Layer**: Retries, timeouts, fallback, and circuit breakers
@@ -19,12 +19,12 @@ A **production-grade AI Gateway** that provides a unified interface for LLM inte
 - **Admin Dashboard**: Full React-based management interface
 - **Authentication**: JWT-based auth with API key support
 
-## 📋 Prerequisites
+##  Prerequisites
 
 - Docker and Docker Compose
 - Node.js 20+ (for local development)
 
-## 🛠️ Installation
+##  Installation
 
 1. Clone the repository:
 ```bash
@@ -49,9 +49,9 @@ OPENAI_API_KEY=your-openai-key
 GEMINI_API_KEY=your-gemini-key
 ```
 
-## 🚀 Running the Application - Action Plan
+##  Running the Application - Action Plan
 
-### ⚡ Quick Start (3 Steps)
+###  Quick Start (3 Steps)
 
 **Step 1: Ensure Docker Desktop is Running**
 - Open Docker Desktop
@@ -83,7 +83,7 @@ docker-compose up --build
 
 **Wait time:** 30-60 seconds for first startup
 
-### 📖 Detailed Instructions
+###  Detailed Instructions
 
 For complete step-by-step guide, see:
 - **[QUICK_START.md](QUICK_START.md)** - Detailed action plan with troubleshooting
@@ -106,12 +106,12 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for production deployment instructions.
 docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```
 
-## 🔑 Default Credentials
+##  Default Credentials
 
 - **Email**: `admin@example.com`
 - **Password**: `Admin123`
 
-## 📡 API Endpoints
+##  API Endpoints
 
 ### Authentication
 - `POST /api/auth/register` - Register new user
@@ -149,7 +149,7 @@ docker-compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 - `PUT /api/admin/api-keys/:id` - Update API key
 - `DELETE /api/admin/api-keys/:id` - Delete API key
 
-## 📝 API Usage Examples
+##  API Usage Examples
 
 ### Chat Endpoint
 
@@ -180,19 +180,19 @@ curl -X POST http://localhost:4000/api/v1/ai/chat \
 }
 ```
 
-## 🏗️ Architecture
+##  Architecture
 
 See [docs/architecture.md](docs/architecture.md) for detailed architecture documentation.
 
-## 📚 API Documentation
+##  API Documentation
 
 See [docs/api.md](docs/api.md) for complete API documentation.
 
-## 🧪 Testing
+##  Testing
 
 Use the Playground page in the admin dashboard to test the AI endpoint interactively.
 
-## 📊 Monitoring
+##  Monitoring
 
 Access the dashboard at `http://localhost:3000` to view:
 - Request metrics
@@ -201,7 +201,7 @@ Access the dashboard at `http://localhost:3000` to view:
 - Guardrail violations
 - Agent pipeline configuration
 
-## 🔧 Configuration
+##  Configuration
 
 ### Reliability Settings
 - `MAX_RETRIES`: Maximum retry attempts (default: 3)
@@ -213,13 +213,13 @@ Access the dashboard at `http://localhost:3000` to view:
 - `CACHE_ENABLED`: Enable/disable caching (default: true)
 - `CACHE_TTL_HOURS`: Cache time-to-live in hours (default: 24)
 
-## 🐳 Docker Services
+##  Docker Services
 
 - **mysql**: MySQL 8.0 database
 - **backend**: Node.js Express backend
 - **frontend**: React + Vite frontend (served via Nginx)
 
-## 🐳 Docker Services
+##  Docker Services
 
 - **mysql**: MySQL 8.0 database with health checks
 - **backend**: Node.js Express backend with auto-migrations
@@ -227,7 +227,7 @@ Access the dashboard at `http://localhost:3000` to view:
 
 All services include health checks and proper startup dependencies.
 
-## 🔒 Security
+##  Security
 
 - JWT token-based authentication
 - API key middleware for service-to-service auth
@@ -237,7 +237,7 @@ All services include health checks and proper startup dependencies.
 - Rate limiting via API key daily limits
 - CORS configuration for frontend
 
-## 📊 Production Features
+##  Production Features
 
 - Health checks for all services
 - Database connection retry logic
@@ -248,15 +248,15 @@ All services include health checks and proper startup dependencies.
 - Security headers
 - Container health monitoring
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
-## 📚 Additional Documentation
+##  Additional Documentation
 
 - **[ACTION_PLAN.md](ACTION_PLAN.md)** - Step-by-step action plan to run the app
 - **[QUICK_START.md](QUICK_START.md)** - Detailed quick start guide
@@ -267,7 +267,7 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 - [Production Readiness](PRODUCTION_READY.md)
 - [Changelog](CHANGELOG.md)
 
-## 🌟 Features Overview
+##  Features Overview
 
 - ✅ **Multi-Agent Pipeline** - Generator → Safety → Quality workflow
 - ✅ **Reliability Layer** - Retries, timeouts, fallback, circuit breakers
@@ -279,7 +279,7 @@ Contributions are welcome! Please read our [Contributing Guide](CONTRIBUTING.md)
 - ✅ **Docker Ready** - Complete containerization with health checks
 - ✅ **Production Ready** - Industry-grade reliability and monitoring
 
-## 🚀 Quick Start
+##  Quick Start
 
 ```bash
 # Clone repository
@@ -300,7 +300,7 @@ docker-compose up --build
 - 📖 [Documentation](docs/)
 - 🐛 [Report Bug](https://github.com/YOUR_USERNAME/ai-multi-agent-reliability-gateway/issues)
 - 💡 [Request Feature](https://github.com/YOUR_USERNAME/ai-multi-agent-reliability-gateway/issues)
-- 📧 Contact: [Your Email]
+- 📧 Contact: shivaprasad040804@gmail.com
 
 ## 🙏 Acknowledgments
 
