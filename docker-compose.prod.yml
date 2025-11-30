@@ -1,0 +1,27 @@
+version: '3.8'
+
+# Production override file
+# Use with: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+
+services:
+  backend:
+    environment:
+      NODE_ENV: production
+      # Override with production secrets
+      JWT_SECRET: ${JWT_SECRET:-change-this-in-production}
+      DB_PASSWORD: ${DB_PASSWORD:-change-this-in-production}
+    restart: unless-stopped
+    # Remove volume mounts in production (use built image)
+    volumes: []
+
+  frontend:
+    restart: unless-stopped
+    environment:
+      VITE_API_URL: ${FRONTEND_API_URL:-http://localhost:4000}
+
+  mysql:
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change-this-in-production}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change-this-in-production}
+

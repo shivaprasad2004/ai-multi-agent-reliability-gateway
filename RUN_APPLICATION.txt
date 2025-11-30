@@ -1,0 +1,77 @@
+═══════════════════════════════════════════════════════════════
+  AI MULTI-AGENT RELIABILITY GATEWAY - RUN INSTRUCTIONS
+═══════════════════════════════════════════════════════════════
+
+STEP 1: PREREQUISITES
+─────────────────────
+✓ Install Docker Desktop
+✓ Start Docker Desktop (wait for it to be running)
+✓ Open Terminal/Command Prompt
+
+STEP 2: NAVIGATE TO PROJECT
+────────────────────────────
+cd "C:\Users\shiva\OneDrive\Desktop\AI Multi-Agent Reliability Gateway"
+
+STEP 3: START APPLICATION
+──────────────────────────
+Windows:   START.bat
+Mac/Linux: ./START.sh
+
+OR manually:
+docker-compose up --build
+
+STEP 4: WAIT FOR STARTUP
+─────────────────────────
+Wait 30-60 seconds for all services to start
+Look for "healthy" status in logs
+
+STEP 5: ACCESS APPLICATION
+───────────────────────────
+Open browser: http://localhost:3000
+
+Login with:
+  Email:    admin@example.com
+  Password: Admin123
+
+STEP 6: VERIFY IT'S WORKING
+────────────────────────────
+✓ All services show "healthy" in docker-compose ps
+✓ Frontend loads at http://localhost:3000
+✓ Can login successfully
+✓ Dashboard displays
+
+═══════════════════════════════════════════════════════════════
+
+USEFUL COMMANDS:
+────────────────
+View logs:        docker-compose logs -f
+Stop services:   docker-compose down
+Restart:          docker-compose restart
+Check status:    docker-compose ps
+
+═══════════════════════════════════════════════════════════════
+
+TROUBLESHOOTING:
+───────────────
+Connection Refused?
+  1. Run: FIX_CONNECTION.bat
+  2. Or: docker-compose down && docker-compose up --build -d
+  3. Wait 60 seconds, then check: docker-compose ps
+  4. Check logs: docker-compose logs frontend
+
+Port in use?      docker-compose down
+Services restarting? Check logs: docker-compose logs
+Can't connect?    Wait longer, check docker-compose ps
+
+See IMMEDIATE_FIX.md for detailed troubleshooting
+
+═══════════════════════════════════════════════════════════════
+
+ACCESS POINTS:
+──────────────
+Frontend:  http://localhost:3000
+Backend:   http://localhost:4000
+MySQL:     localhost:3306
+
+═══════════════════════════════════════════════════════════════
+

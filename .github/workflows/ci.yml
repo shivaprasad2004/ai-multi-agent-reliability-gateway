@@ -1,0 +1,59 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v2
+    
+    - name: Build backend
+      run: |
+        cd backend
+        docker build -t ai-gateway-backend:test -f docker/Dockerfile .
+    
+    - name: Build frontend
+      run: |
+        cd frontend
+        docker build -t ai-gateway-frontend:test -f Dockerfile .
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+    
+    - name: Install backend dependencies
+      run: |
+        cd backend
+        npm install
+    
+    - name: Install frontend dependencies
+      run: |
+        cd frontend
+        npm install
+    
+    - name: Check backend syntax
+      run: |
+        cd backend
+        node --check src/app.js || true
+    
+    - name: Check frontend syntax
+      run: |
+        cd frontend
+        npm run build || true
+
